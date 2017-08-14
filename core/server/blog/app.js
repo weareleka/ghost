@@ -112,6 +112,9 @@ module.exports = function setupBlogApp() {
     // Blog frontend is cacheable
     blogApp.use(cacheControl('public'));
 
+    // don't generate etags; don't want the CDN hitting the server constantly
+    blogApp.disable("etag");
+
     debug('General middleware done');
 
     // Set up Frontend routes (including private blogging routes)
