@@ -1,3 +1,9 @@
+// regiser azure application insights
+// https://docs.microsoft.com/en-us/azure/application-insights/app-insights-nodejs
+const appInsights = require("applicationinsights");
+appInsights.setup(); // will get instrumentation key from env variable APPINSIGHTS_INSTRUMENTATIONKEY
+appInsights.start();
+
 // # Ghost Startup
 // Orchestrates the startup of Ghost when run from command line.
 
